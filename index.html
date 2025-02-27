@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #EEECE1, #F6F5F5);
+            font-family: Arial, sans-serif;
+        }
+        .logo {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .email {
+
+            position: absolute;
+            bottom: 20px;
+            user-select: none;
+            text-align: center;
+            width: 100%;
+
+
+            font-size: 12px;
+            color: #888;
+            user-select: none;
+            text-transform: uppercase;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" id="logo" src="images/400x200-transparent.png" alt="Logo">
+    <div class="email" id="email"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.getElementById("logo").style.opacity = 1;
+            }, 500);
+
+            const emailElement = document.getElementById("email");
+            const user = "gui";
+            const domain = "letshoney.com";
+            emailElement.innerText = `${user}@${domain}`;
+        });
+    </script>
+</body>
+</html>
